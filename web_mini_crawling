@@ -39,7 +39,7 @@ time.sleep(0.5)
 
 driver.find_element(
     By.CSS_SELECTOR, ".input_search.show_placeholder_on_focus"
-).send_keys("슈프림")
+).send_keys("폴로")
 time.sleep(0.5)
 
 driver.find_element(
@@ -59,15 +59,13 @@ items = soup.select(".item_inner")
 product_list = []
 for i in items:
     product_name = i.select_one(".translated_name")
-    if "후드" in product_name.text:
+    if "니트" in product_name.text:
         category = "상의"
         brand = i.select_one(".product_info_brand.brand").text
         product_name = i.select_one(".translated_name").text
-        price = i.select_one(".amount").text[:-2]
-        price = int(price.replace(",", ""))
-        #  price = int(i.select_one(".amount").text[:-1].replace(",", ""))
+        price = i.select_one(".amount").text[:-1].split(" ")[1]
 
-        print(product_name, price)
+        print(category, brand, product_name, price)
         item = [category, brand, product_name, price]
         product_list.append(item)
 
@@ -80,7 +78,6 @@ connection = pymysql.connect(
     password="class-password",
     db="kream",
     charset="utf8mb4",
-    cursorclass=pymysql.cursors.DictCursor,
 )
 
 connection.cursor()
@@ -89,7 +86,7 @@ connection.cursor()
 def execute_query(connection, query, args=None):  #
     with connection.cursor() as cursor:
         cursor.execute(query, args or ())
-        if query.strip().startswith("SELECT"):
+        if query.strip().upper().startswith("SELECT"):
             return cursor.fetchall()
         else:
             connection.commit()
@@ -98,7 +95,7 @@ def execute_query(connection, query, args=None):  #
 for i in product_list:
     execute_query(
         connection,
-        "INSERT INTO kream_table (category, brand, product_name, price)VALUES (%s, %s, %s, %s)",
+        "INSERT INTO kream (category, brand, product_name, price)VALUES (%s, %s, %s, %s)",
         (i[0], i[1], i[2], i[3]),
     )
     connection.commit()

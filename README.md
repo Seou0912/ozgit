@@ -1,6 +1,7 @@
 <img width="1085" alt="Screenshot 2024-01-22 at 11 26 25" src="https://github.com/Seou0912/ozgit/assets/151927766/4b01b75d-51b5-4ac7-aa70-96bf1c5ae999">
   
 무슨 문제로 안되었었는지 처음부터 확인하며 작성해본다.  
+  
 정말 스팀이 점점 올라왔다.  
 왜 ~~  
 왜!!  
@@ -117,3 +118,8 @@ varbinary -> int # 이건 했는데 price 왠 일!!
   
 **DB table 생성시 varchar로** 하니 되더라는,,,  
 str과 int 변환해서 출력하는 것을 더 해봐야겠다.  
+
+**보완사항**
+* - 페이지 넘김소스 추가  
+* - 검색 조회
+  - 성별 데이터 가져오기? 입력하기?

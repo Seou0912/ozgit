@@ -45,13 +45,13 @@ clawing>flask run #정상 작동하면 접속 가능한 주소 보여줌
 **http://127.0.0.1:5000** // 종료 ^c  
 >> 잘 실행 됨
 <img width="729" alt="Screenshot 2024-01-18 at 14 20 17" src="https://github.com/Seou0912/ozgit/assets/151927766/f286bc3a-46a8-4cca-92f9-a14f819c4c0f">
-
+  
 # 4. bootstrap 적용  
 https://getbootstrap.kr/ Down css,js  
 clawing/static 생성  
 그안에 css, js copy  
 
-<br/>
+<br/>  
 # 5. admin page -> clawing/template 폴더 생성 후 가져옴   
    
 링크코드 변경   
@@ -61,12 +61,12 @@ clawing/static 생성
 
 >> 잘 실행 되고 있다.  
 <br/>
-# 6. flask에 scraping result database linking     
+# 6. flask에 scraping result database linking      
 appy.py   
-from flask import Flask, render_template  
-import pymysql # 모듈 import  
-<br/>
-** // Mysql 데이터베이스 연결**  
+from flask import Flask, render_template   
+import pymysql // 모듈 import   
+<br/>  
+ // Mysql 데이터베이스 연결**   
 db = pymysql.connect(   
 host="127.0.0.1",  
 user="root",  
@@ -78,8 +78,8 @@ cursorclass=pymysql.cursors.DictCursor,
   
 app = Flask(__name__)  
   
-**// 데이터 접근**  
-cur = db.cursor()  
+**// 데이터 접근**   
+cur = db.cursor()   
 sql = "SELECT * FROM kream" # SQL query 작성  
 cur.exevute---오타(sql) # sql 실행  
   

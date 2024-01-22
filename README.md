@@ -1,3 +1,5 @@
+![Screenshot 2024-01-22 at 11 50 34](https://github.com/Seou0912/ozgit/assets/151927766/052e8452-21ef-42eb-b8eb-171d30faa09f)
+  
 <img width="1085" alt="Screenshot 2024-01-22 at 11 26 25" src="https://github.com/Seou0912/ozgit/assets/151927766/4b01b75d-51b5-4ac7-aa70-96bf1c5ae999">
   
 무슨 문제로 안되었었는지 처음부터 확인하며 작성해본다.  

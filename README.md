@@ -51,16 +51,15 @@ https://getbootstrap.kr/ Down css,js
 clawing/static 생성  
 그안에 css, js copy  
 
-<br/>  
 # 5. admin page -> clawing/template 폴더 생성 후 가져옴   
    
 링크코드 변경   
-**<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">**
-**<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>**
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">  
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>  
 ![Screenshot 2024-01-14 at 18 34 40](https://github.com/Seou0912/ozgit/assets/151927766/c4a343a7-3cee-45d6-a195-e1c699c274e4)
 
 >> 잘 실행 되고 있다.  
-<br/>
+
 # 6. flask에 scraping result database linking      
 appy.py   
 from flask import Flask, render_template   
